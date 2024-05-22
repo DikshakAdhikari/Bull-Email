@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import userRouter from './routes/user.js'
 import connectDB from './connection/connect.js'
 dotenv.config()
-
+import transporter from './controllers/transporter.js'
 connectDB()
 const app= express()
 app.use(express.json())
