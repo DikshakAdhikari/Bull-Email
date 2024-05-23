@@ -21,9 +21,9 @@ export const createUser= async(req, res)=> {
 export const sendEmails= async(req,res)=> {
     try{
         const usersToSendEmails= await userModel.find()
-        usersToSendEmails.map((val, index)=> {
+        // usersToSendEmails.map((val, index)=> {
             
-        })
+        // })
     }catch(err){
         res.json({message:err})
     }
