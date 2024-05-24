@@ -28,3 +28,4 @@ export const sendEmails= async(req,res)=> {
         res.json({message:err})
     }
 }
+
