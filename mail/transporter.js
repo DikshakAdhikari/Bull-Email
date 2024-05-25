@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv'
+const nodemailer= require('nodemailer')
+const dotenv= require('dotenv')
 dotenv.config()
 
 
@@ -22,4 +22,4 @@ transporter.verify((error, success) => {
 });
 
 
-export default transporter
+module.exports= transporter

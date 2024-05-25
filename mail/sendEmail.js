@@ -1,13 +1,9 @@
-import path from 'path';
-import ejs from 'ejs';
-import transporter from './transporter.js';
-import { fileURLToPath } from 'url';
+const path = require('path')
+const ejs= require('ejs')
+const transporter= require('./transporter.js')
 
-// Derive __filename and __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-export const sendEmail = async ({ name, email }) => {
+const sendEmail = async ({ name, email }) => {
   try {
     const requiredPath = path.join(__dirname, "../views/AccountCreated.ejs");
     console.log(requiredPath);
@@ -28,3 +24,5 @@ export const sendEmail = async ({ name, email }) => {
     console.log(err);
   }
 };
+
+module.exports= sendEmail

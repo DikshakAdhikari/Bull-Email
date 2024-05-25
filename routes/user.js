@@ -1,10 +1,9 @@
-import express from 'express'
-import { createUser, sendEmails } from '../controllers/userController.js'
-
+const express= require('express')
+const { createUser, sendEmails } = require('../controllers/userController')
 const userRouter= express.Router()
 
-userRouter.post('/', createUser)
+userRouter.post('/',  createUser)
 
 userRouter.get('/sendEmails', sendEmails)
 
-export default userRouter
+module.exports= userRouter

@@ -1,9 +1,9 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import userRouter from './routes/user.js'
-import connectDB from './connection/connect.js'
+const express = require('express')
+const dotenv= require('dotenv')
+const connectDB= require('./connection/connect.js')
+const userRouter= require('./routes/user.js')
 dotenv.config()
-import "./processors/index.js"
+// require("./processors/index.js")
 connectDB()
 const app= express()
 app.use(express.json())

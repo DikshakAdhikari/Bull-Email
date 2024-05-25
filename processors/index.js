@@ -12,7 +12,8 @@
 
 // client.on('error', err => console.log('Redis Client Error', err));
 
-import Queue from 'bull'
+const Queue= require('bull')
+
 // const path = require("path");
 // const { REDIS_URI, REDIS_PORT } = require("../config/constants");
 
