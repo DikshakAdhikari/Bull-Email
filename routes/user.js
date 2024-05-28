@@ -6,4 +6,5 @@ userRouter.post('/',  createUser)
 
 userRouter.get('/sendEmails', sendEmails)
 
+
 module.exports= userRouter
