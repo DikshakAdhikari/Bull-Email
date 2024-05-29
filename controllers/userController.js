@@ -27,12 +27,13 @@ const emailQueue = new Queue("emailQueue", {
     }
 }
 
+
  const sendEmails= async(req,res)=> {
     try{
         const usersToSendEmails= await userModel.find()
         usersToSendEmails.map((val, index)=> {
             emailQueue.add(
-                {usersToSendEmails},{fifo:true, attempts:1, delay:4000}
+                {val},{fifo:true, attempts:1, delay:4000}
             ).then(()=> {
                 if(index+1 === usersToSendEmails.length){
                     console.log("All users added to queue!");
@@ -41,7 +42,7 @@ const emailQueue = new Queue("emailQueue", {
             })
         });
 
-        // emptyBullQueue()
+        //emptyBullQueue()
    
     }catch(err){
         res.json({message:err})
