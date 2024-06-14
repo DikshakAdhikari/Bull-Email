@@ -7,7 +7,6 @@ const sendEmail = async ({ name, email }) => {
   try {
     const requiredPath = path.join(__dirname, "../views/AccountCreated.ejs");
     console.log(requiredPath);
-
     const data = await ejs.renderFile(requiredPath, {
       name: name
     });
@@ -19,7 +18,6 @@ const sendEmail = async ({ name, email }) => {
       html: data,
     };
 
-    
     await transporter.sendMail(mainOptions);
   } catch (err) {
     console.log(err);
